@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChirstmasShoppingUI.Views.DetailPage"
+             xmlns:PanCake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             BackgroundColor="#fd553b">
+    <ContentPage.Content>
+        <!-- Main structure-->
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="0">
+            <!-- 1.1 Main image-->
+            <StackLayout Grid.Row="0" BackgroundColor="White" HeightRequest="350">
+                <PanCake:PancakeView Grid.Row="0" CornerRadius="0,0,90,0"> 
+                          <Grid ColumnDefinitions="*,Auto" BackgroundColor="#d4f1ef" HorizontalOptions="FillAndExpand">
+                                <Image Grid.Column="0" Margin="10,20,10,20" Source="Deer" />
+                                <Button Grid.Column="0" Grid.ColumnSpan="2" ImageSource="Bag" BackgroundColor="#90dbd5" Margin="0,15,15,0" VerticalOptions="Start" HorizontalOptions="End" HeightRequest="50" WidthRequest="50" CornerRadius="25"/>
+                                <Button Grid.Column="1" VerticalOptions="Start" BackgroundColor="White" HorizontalOptions="End" Margin="0,9,15,0" HeightRequest="{OnPlatform iOS='16', Android='26'}" WidthRequest="{OnPlatform iOS='16', Android='26'}" CornerRadius="{OnPlatform iOS='8', Android='13'}" Text="1" FontAttributes="Bold" FontSize="7" TextColor="Red" />
+                          </Grid> 
+                </PanCake:PancakeView>
+            </StackLayout>
+            <!-- 1.2 Details -->
+            <StackLayout Grid.Row="1" BackgroundColor="#d4f1ef">
+                <PanCake:PancakeView Grid.Row="1" CornerRadius="0,90,0,0">
+                         <Grid RowDefinitions="Auto,Auto,Auto,Auto" Padding="20,45,20,0" BackgroundColor="White" HeightRequest="300">
+                               <Label Grid.Row="0" Text="Flussmonger" FontAttributes="Bold" TextColor="Silver"/>
+                               <Label Grid.Row="1" Text="Reindeer Teddy Bear&#10;with Chocolates" FontSize="30" FontAttributes="Bold"/>
+                               <Label Grid.Row="2" Text="$70.99" FontSize="25" Padding="0,15" TextColor="#49a657" FontAttributes="Bold"/>
+                               <Label Grid.Row="3" Text="A children's favorite is brought to life with the Rudolph animated plush, a cute, collectible frien with red and black buffalo plaid print on his scarf ans inside his ears." TextColor="Silver"/>
+                         </Grid> 
+                </PanCake:PancakeView>
+             </StackLayout>
+
+            <PanCake:PancakeView Grid.Row="2" CornerRadius="0,0,50,50" Margin="0,-1,0,0" BackgroundColor="White" HeightRequest="150" />
+
+           <!--< Cart-->
+           <Button Text="Add to Cart" Grid.Row="3" CornerRadius="20" Clicked="Btn_Clicked" BackgroundColor="White" Margin="60,40" FontAttributes="Bold" HeightRequest="55" TextColor="Black" VerticalOptions="CenterAndExpand"/>
+
+        </Grid>  
+    </ContentPage.Content>
+</ContentPage>
